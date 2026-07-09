@@ -1,0 +1,1 @@
+#docker run -d --name redis --network Ecom redis:7
