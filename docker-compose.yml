@@ -5,10 +5,11 @@ networks:
 
 services:
   mongodb:
-    image: mongo
+    image: mohan9866007322/mongodb:v1
     container_name: mongodb
   catalogue:
-    image: catalogue
+    image: mohan9866007322/catalogue:v1
+    container_name: catalogue
     depends_on:
       - mongodb
   redis:
