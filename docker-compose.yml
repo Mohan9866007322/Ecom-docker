@@ -45,9 +45,9 @@ services:
   payment:
     image: mohan9866007322/payment:v1
     environment:
-      CART_HOST: cart
-      USER_HOST: user
-      AMQP_HOST: rabbitmq
+      CART_HOST:cart
+      USER_HOST:user
+      AMQP_HOST:rabbitmq
       AMQP_USER:ecom
       AAMQP_PASS:ecom123
     depends_on:
