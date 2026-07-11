@@ -52,3 +52,7 @@ services:
       AMQP_HOST:rabbitmq
       AMQP_USER:ecom
       AAMQP_PASS:ecom123
+    depends_on:
+      - rabbitmq
+      - cart
+      - user
