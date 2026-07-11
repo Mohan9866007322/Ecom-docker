@@ -36,3 +36,9 @@ services:
     depends_on:
       - cart
       - mysql
+  rabbitmq:
+    image: rabbitmq:3
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ecom
+      RABBITMQ_DEFAULT_PASS: ecom123
