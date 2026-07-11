@@ -1,0 +1,37 @@
+networks:
+  ecom:
+    driver: bridge
+    name: ecom
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+  catalogue:
+    image: catalogue
+    depends_on:
+      - mongodb
+  redis:
+    image: redis:7.0
+    container_name: redis
+  user:
+    image: mohan9866007322/user:v1
+    container_name: user
+    depends_on:
+      - redis
+      - mongodb
+  cart:
+    image: mohan9866007322/cart:v1
+    container_name: cart
+    depends_on:
+      - catalogue
+      - redis
+  mysql:
+    image: mohan9866007322/mysql:v1
+    container_name: mysql
+  shipping:
+    image: mohan9866007322/shipping:v1
+    container_name: shipping
+    depends_on:
+      - cart
+      - mysql
